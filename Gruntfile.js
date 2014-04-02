@@ -102,7 +102,7 @@ module.exports = function (grunt) {
     watch: {
       options: {
         livereload: true,
-        nospawn: true
+        //spawn: false
       },
       html: {
         files: '**/*.html'
