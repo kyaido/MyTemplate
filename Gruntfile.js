@@ -102,13 +102,13 @@ module.exports = function (grunt) {
     watch: {
       options: {
         livereload: true,
-        //spawn: false
+        spawn: false
       },
       html: {
         files: '**/*.html'
       },
       css: {
-        files: [ 'scss/**/*.scss', 'css/**/*.scss'],
+        files: [ 'scss/**/*.scss' ],
         tasks: [ 'compass', 'autoprefixer' ]
       }
     }
