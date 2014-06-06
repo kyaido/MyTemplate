@@ -1,12 +1,12 @@
 module.exports = function (grunt) {
 
   /*
-    * connect      ƒ[ƒJƒ‹ƒT[ƒo‚ğ—§‚Ä‚é
-    * compass      sass‚ÌƒRƒ“ƒpƒCƒ‹—p‚É“ü‚Á‚Ä‚é
-    * csslint      grunt csslint ‚Å”­‰Î
-    * watch        htmlAscssAjs‚É•ÏX‚ª‚ ‚é‚Æƒuƒ‰ƒEƒU‚ğƒI[ƒgƒŠƒ[ƒh‚·‚é
-    * autoprefixer cssC³‚µ‚½ƒ^ƒCƒ~ƒ“ƒO‚Å‘–‚ç‚¹‚é
-                   compass‚Æ“¯‚É‘–‚éƒCƒ[ƒW‚ÅAƒRƒ“ƒpƒX‚Å“f‚«o‚µ‚½css‚ğ‘ÎÛ‚É‚µ‚Ä‚»‚Ì‚Ü‚Üã‘‚«‚ğ‚·‚é
+    * connect      ãƒ­ãƒ¼ã‚«ãƒ«ã‚µãƒ¼ãƒã‚’ç«‹ã¦ã‚‹
+    * compass      sassã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ç”¨ã«å…¥ã£ã¦ã‚‹
+    * csslint      grunt csslint ã§ç™ºç«
+    * watch        htmlã€scssã€jsã«å¤‰æ›´ãŒã‚ã‚‹ã¨ãƒ–ãƒ©ã‚¦ã‚¶ã‚’ã‚ªãƒ¼ãƒˆãƒªãƒ­ãƒ¼ãƒ‰ã™ã‚‹
+    * autoprefixer cssä¿®æ­£ã—ãŸã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§èµ°ã‚‰ã›ã‚‹
+                   compassã¨åŒæ™‚ã«èµ°ã‚‹ã‚¤ãƒ¡ãƒ¼ã‚¸ã§ã€ã‚³ãƒ³ãƒ‘ã‚¹ã§åãå‡ºã—ãŸcssã‚’å¯¾è±¡ã«ã—ã¦ãã®ã¾ã¾ä¸Šæ›¸ãã‚’ã™ã‚‹
   */
   
   grunt.loadNpmTasks('grunt-contrib-connect');
