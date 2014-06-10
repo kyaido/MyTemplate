@@ -11,6 +11,7 @@
 .textNormal { font-weight: normal !important; }
 .textBold { font-weight: bold !important; }
 .textUnderline { text-decoration: underline !important; }
+.textItalic { font-style: italic !important; }
 .textNote { padding-left: 1em; text-indent: -1em; }
 
 
@@ -21,6 +22,14 @@
 .elementTop { vertical-align: top !important; }
 .elementMiddle { vertical-align: middle !important; }
 .elementBottom { vertical-align: bottom !important; }
+
+
+/* font-size */
+@for $i from 10 through 20 {
+  .fs#{$i} {
+    font-size: 1px * $i !important;
+  }
+}
 
 
 /* margin top */
