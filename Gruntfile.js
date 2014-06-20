@@ -110,6 +110,9 @@ module.exports = function (grunt) {
       css: {
         files: [ 'scss/**/*.scss' ],
         tasks: [ 'compass', 'autoprefixer' ]
+      },
+      js: {
+        files: '**/*.js'
       }
     }
     
