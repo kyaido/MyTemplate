@@ -8,31 +8,3 @@
 @mixin add-min-query($point) {
   @media screen and (min-width: $point) { @content; }
 }
-
-
-// /* keyframes */
-@mixin keyframes($name) {
-  @if $support-webkit {
-    @-webkit-keyframes #{$name} {
-      @content;
-    }
-  }
-  @if $support-mozilla {
-    @-moz-keyframes #{$name} {
-      @content;
-    }
-  }
-  @if $support-opera {
-    @-o-keyframes #{$name} {
-      @content;
-    }
-  }
-  @if $support-ms {
-    @-ms-keyframes #{$name} {
-      @content;
-    }
-  }
-  @keyframes #{$name} {
-    @content;
-  }
-}
