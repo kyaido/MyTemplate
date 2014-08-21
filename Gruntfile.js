@@ -2,7 +2,7 @@ module.exports = function (grunt) {
 
   /*
     * connect      ローカルサーバを立てる
-    * compass      sassのコンパイル用に入ってる
+    * sass         sassのコンパイル
     * csslint      grunt csslint で発火
     * watch        html、scss、jsに変更があるとブラウザをオートリロードする
     * autoprefixer css修正したタイミングで走らせる
@@ -10,7 +10,7 @@ module.exports = function (grunt) {
   */
   
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
@@ -31,18 +31,18 @@ module.exports = function (grunt) {
       }
     },
     
-    compass: {
+    sass: {
       dist: {
         options: {
-          sassDir: 'scss',
-          cssDir: 'css',
-          imagesDir: 'img',
-          javascriptsDir: 'js',
-          outputStyle: 'expanded',
-          relativeAssets: true,
-          noLineComments: true,
-          debugInfo: false
-        }
+          style: 'expanded'
+        },
+        files: [{
+          expand: true,
+          cwd: 'scss/',
+          src: ['**/*.scss'],
+          dest: 'css/',
+          ext: '.css'
+        }]
       }
     },
     
@@ -109,7 +109,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: [ 'scss/**/*.scss' ],
-        tasks: [ 'compass', 'autoprefixer' ]
+        tasks: [ 'sass', 'autoprefixer' ]
       },
       js: {
         files: '**/*.js'
