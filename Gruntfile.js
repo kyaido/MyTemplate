@@ -5,8 +5,8 @@ module.exports = function (grunt) {
     * sass         sassのコンパイル
     * csslint      grunt csslint で発火
     * watch        html、scss、jsに変更があるとブラウザをオートリロードする
-    * autoprefixer css修正したタイミングで走らせる
-                   compassと同時に走るイメージで、コンパスで吐き出したcssを対象にしてそのまま上書きをする
+    * autoprefixer scss修正したタイミングで走らせる
+                   sassのコンパイルと同時に走るイメージで、cssを対象にしてそのまま上書きをする
   */
   
   grunt.loadNpmTasks('grunt-contrib-connect');
