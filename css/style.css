@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -25,7 +25,8 @@ body {
    ========================================================================== */
 /**
  * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
 article,
@@ -37,6 +38,7 @@ footer,
 header,
 hgroup,
 main,
+menu,
 nav,
 section,
 summary {
@@ -81,7 +83,7 @@ template {
  * Remove the gray background color from active links in IE 10.
  */
 a {
-  background: transparent;
+  background-color: transparent;
 }
 
 /**
@@ -441,7 +443,7 @@ em {
 ------------------------------------- */
 body {
   font-size: 14px;
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   line-height: 1.7;
   color: #333;
 }
@@ -687,7 +689,7 @@ img {
 }
 
 #headInner {
-  width: 960px;
+  width: 980px;
   margin: 0 auto;
 }
 
@@ -722,7 +724,7 @@ img {
 }
 
 #footInner {
-  width: 960px;
+  width: 980px;
   margin: 0 auto;
 }
 
