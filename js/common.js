@@ -29,7 +29,9 @@
 // ----------------------------------------------------------------------------
 $(function () {
   // EaseScroll
-  $('a[href^=#]:not(.notEasescroll)').easescrollable();
+  $('a[href^=#]:not(.notEasescroll)').easescrollable({
+    changehash: false
+  });
   
   // rollover
   $('.roll').rollover({ originalSuffix: '', rolloverSuffix: '_on' });
