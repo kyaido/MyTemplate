@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
+var webserver = require('gulp-webserver');
 
 /* sass task */
 gulp.task('sass', function() {
@@ -25,7 +26,24 @@ gulp.task('autoprefixer', ['sass'], function() {
     .pipe(gulp.dest('css/'));
 });
 
+/* webserver task */
+gulp.task('webserver', function() {
+  gulp.src('.')
+    .pipe(webserver({
+      host: '0.0.0.0',
+      port: 9000,
+      livereload: true,
+      directoryListing: true,
+      open: false
+    }));
+});
+
 /* watch task */
-gulp.task('watch', function() {
+gulp.task('watch', ['webserver'], function() {
   gulp.watch(['scss/**/*.scss'], ['autoprefixer']);
+});
+
+/* default task */
+gulp.task('default', ['watch'], function() {
+  // call watch task simply.
 });
