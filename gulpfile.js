@@ -10,16 +10,10 @@ gulp.task('sass', function() {
   return gulp.src('scss/**/*.scss')
     .pipe(plumber())
     .pipe(sass({
-      sourcemap: true,
+      // sourcemap: true,
       sourcemapPath: '../scss',
       style: 'expanded'
     }))
-    .pipe(gulp.dest('css/'));
-});
-
-/* autoprefixer task */
-gulp.task('autoprefixer', ['sass'], function() {
-  return gulp.src('css/**/*.css')
     .pipe(autoprefixer({
       browsers: ['last 2 version', 'Explorer >= 8', 'android >= 2.3']
     }))
@@ -39,11 +33,9 @@ gulp.task('webserver', function() {
 });
 
 /* watch task */
-gulp.task('watch', ['webserver'], function() {
-  gulp.watch(['scss/**/*.scss'], ['autoprefixer']);
+gulp.task('watch', function() {
+  gulp.watch(['scss/**/*.scss'], ['sass']);
 });
 
 /* default task */
-gulp.task('default', ['watch'], function() {
-  // call watch task simply.
-});
+gulp.task('default', ['webserver', 'watch']);
