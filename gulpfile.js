@@ -21,7 +21,7 @@ gulp.task('sass', function() {
 gulp.task('autoprefixer', ['sass'], function() {
   return gulp.src('css/**/*.css')
     .pipe(autoprefixer({
-      browsers: ['last 2 version', 'Explorer >= 8', 'android 2.3']
+      browsers: ['last 2 version', 'Explorer >= 8', 'android >= 2.3']
     }))
     .pipe(gulp.dest('css/'));
 });
