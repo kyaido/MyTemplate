@@ -3,7 +3,6 @@ module.exports = function (grunt) {
   /*
     * connect      ローカルサーバを立てる
     * sass         sassのコンパイル
-    * csslint      grunt csslint で発火
     * watch        html、scss、jsに変更があるとブラウザをオートリロードする
     * autoprefixer scss修正したタイミングで走らせる
                    sassのコンパイルと同時に走るイメージで、cssを対象にしてそのまま上書きをする
@@ -11,7 +10,6 @@ module.exports = function (grunt) {
   
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
   
@@ -56,47 +54,6 @@ module.exports = function (grunt) {
         src: 'css/**/*.css',
         dest: 'css/'
       }
-    },
-    
-    csslint: {
-      all: {
-        src: ['css/**/*.css'],
-        options: {
-          // https://gist.github.com/hail2u/1303613
-          'box-model': false,
-          'display-property-grouping': true,
-          'duplicate-properties': true,
-          'empty-rules': true,
-          'known-properties': true,
-          'non-link-hover': false,
-          'adjoining-classes': false,
-          'box-sizing': false,
-          'compatible-vendor-prefixes': false,
-          'gradients': false,
-          'text-indent': false,
-          'vendor-prefix': true,
-          'fallback-colors': true,
-          'star-property-hack': true,
-          'underscore-property-hack': true,
-          'bulletproof-font-face': false,
-          'font-faces': false,
-          'import': true,
-          'regex-selectors': false,
-          'universal-selector': true,
-          'zero-units': true,
-          'overqualified-elements': false,
-          'shorthand': true,
-          'duplicate-background-images': false,
-          'floats': false,
-          'font-sizes': false,
-          'ids': false,
-          'important': false,
-          'outline-none': true,
-          'qualified-headings': false,
-          'unique-headings': false,
-          'unqualified-attributes': false
-        }
-      },
     },
     
     watch: {
