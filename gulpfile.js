@@ -1,7 +1,8 @@
 var gulp         = require('gulp');
-// var sass      = require('gulp-sass');
-var sass         = require('gulp-ruby-sass');
+var sass         = require('gulp-sass');
+// var sass         = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var minifyCSS    = require( 'gulp-minify-css' );
 var plumber      = require('gulp-plumber');
 var webserver    = require('gulp-webserver');
 
@@ -13,14 +14,25 @@ var AUTOPREFIXER_BROWSERS = [
 gulp.task('sass', function() {
   return gulp.src('scss/**/*.scss')
     .pipe(plumber())
-    .pipe(sass({
-      'sourcemap=none': true,
-      sourcemapPath: '../scss',
-      style: 'expanded'
-    }))
+    .pipe(sass( { errLogToConsole: true } ))
     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
+    .pipe(minifyCSS())
     .pipe(gulp.dest('css/'));
 });
+
+
+/* ruby-sass task */
+// gulp.task('sass', function() {
+//   return gulp.src('scss/**/*.scss')
+//     .pipe(plumber())
+//     .pipe(sass({
+//       'sourcemap=none': true,
+//       sourcemapPath: '../scss',
+//       style: 'expanded'
+//     }))
+//     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
+//     .pipe(gulp.dest('css/'));
+// });
 
 
 /* webserver task */
