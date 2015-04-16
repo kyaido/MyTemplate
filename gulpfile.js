@@ -2,7 +2,7 @@ var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 // var sass         = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var minifyCSS    = require( 'gulp-minify-css' );
+var minifyCSS    = require('gulp-minify-css');
 var plumber      = require('gulp-plumber');
 var webserver    = require('gulp-webserver');
 
