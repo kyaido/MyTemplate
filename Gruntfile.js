@@ -14,16 +14,14 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-autoprefixer');
   
   grunt.initConfig({
-  
+    
     connect: {
-      options: {
-        port: 9000,
-        livereload: 35729,
-        hostname: '0.0.0.0'
-      },
-      livereload: {
+      server: {
         options: {
           //open: true,
+          port: 9000,
+          livereload: true,
+          hostname: '0.0.0.0',
           base: 'dist/'
         }
       }
@@ -46,7 +44,7 @@ module.exports = function (grunt) {
     
     autoprefixer: {
       options: {
-        browsers: ['last 2 version', 'Explorer >= 8', 'android >= 2.3']
+        browsers: ['last 2 version', 'Explorer >= 8', 'Android >= 2.3']
       },
       files: {
         expand: true,
