@@ -24,7 +24,7 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           //open: true,
-          base: '.'
+          base: 'dist/'
         }
       }
     },
@@ -36,9 +36,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'scss/',
+          cwd: 'src/scss/',
           src: ['**/*.scss'],
-          dest: 'css/',
+          dest: 'dist/css/',
           ext: '.css'
         }]
       }
@@ -51,8 +51,8 @@ module.exports = function (grunt) {
       files: {
         expand: true,
         flatten: true,
-        src: 'css/**/*.css',
-        dest: 'css/'
+        src: 'dist/css/**/*.css',
+        dest: 'dist/css/'
       }
     },
     
@@ -62,14 +62,17 @@ module.exports = function (grunt) {
         spawn: false
       },
       html: {
-        files: '**/*.html'
+        files: 'dist/**/*.html'
       },
       css: {
-        files: [ 'scss/**/*.scss' ],
+        files: [ 'src/scss/**/*.scss' ],
         tasks: [ 'sass', 'autoprefixer' ]
       },
       js: {
-        files: '**/*.js'
+        files: 'dist/**/*.js'
+      },
+      gruntfile: {
+        files: 'Gruntfile.js'
       }
     }
     
