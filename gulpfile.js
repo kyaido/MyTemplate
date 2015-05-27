@@ -12,37 +12,37 @@ var AUTOPREFIXER_BROWSERS = [
 
 /* sass task */
 gulp.task('sass', function() {
-  return gulp.src('scss/**/*.scss')
+  return gulp.src('src/scss/**/*.scss')
     .pipe(plumber())
     .pipe(sass( { errLogToConsole: true } ))
     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-    .pipe(minifyCSS())
-    .pipe(gulp.dest('css/'));
+    .pipe(minifyCSS({advanced: false}))
+    .pipe(gulp.dest('dist/css/'));
 });
 
 
 /* ruby-sass task */
 // gulp.task('sass', function() {
-//   return gulp.src('scss/**/*.scss')
+//   return gulp.src('src/scss/**/*.scss')
 //     .pipe(plumber())
 //     .pipe(sass({
 //       'sourcemap=none': true,
-//       sourcemapPath: '../scss',
+//       sourcemapPath: '../../src/scss',
 //       style: 'expanded'
 //     }))
 //     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-//     .pipe(gulp.dest('css/'));
+//     .pipe(gulp.dest('dist/css/'));
 // });
 
 
 /* webserver task */
 gulp.task('webserver', function() {
-  gulp.src('.')
+  gulp.src('./dist/')
     .pipe(webserver({
       host: '0.0.0.0',
       port: 9000,
       livereload: true,
-      directoryListing: true,
+      directoryListing: false,
       open: false
     }));
 });
@@ -50,7 +50,7 @@ gulp.task('webserver', function() {
 
 /* watch task */
 gulp.task('watch', function() {
-  gulp.watch(['scss/**/*.scss'], ['sass']);
+  gulp.watch(['src/scss/**/*.scss'], ['sass']);
 });
 
 
