@@ -1,38 +1,21 @@
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
-// var sass         = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var minifyCSS    = require('gulp-minify-css');
 var plumber      = require('gulp-plumber');
 var webserver    = require('gulp-webserver');
 
 var AUTOPREFIXER_BROWSERS = [
-  'last 2 version', 'Explorer >= 8', 'android >= 2.3'
+  'last 2 version', 'Explorer >= 8', 'Android >= 2.3'
 ];
 
 /* sass task */
 gulp.task('sass', function() {
   return gulp.src('src/scss/**/*.scss')
     .pipe(plumber())
-    .pipe(sass( { errLogToConsole: true } ))
+    .pipe(sass( { errLogToConsole: true, outputStyle: 'compressed' } ))
     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-    .pipe(minifyCSS({advanced: false}))
     .pipe(gulp.dest('dist/css/'));
 });
-
-
-/* ruby-sass task */
-// gulp.task('sass', function() {
-//   return gulp.src('src/scss/**/*.scss')
-//     .pipe(plumber())
-//     .pipe(sass({
-//       'sourcemap=none': true,
-//       sourcemapPath: '../../src/scss',
-//       style: 'expanded'
-//     }))
-//     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-//     .pipe(gulp.dest('dist/css/'));
-// });
 
 
 /* webserver task */
