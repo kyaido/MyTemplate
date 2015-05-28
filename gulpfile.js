@@ -12,7 +12,10 @@ var AUTOPREFIXER_BROWSERS = [
 gulp.task('sass', function() {
   return gulp.src('src/scss/**/*.scss')
     .pipe(plumber())
-    .pipe(sass( { errLogToConsole: true, outputStyle: 'compressed' } ))
+    .pipe(sass({
+      errLogToConsole: true,
+      outputStyle: 'compressed'
+    }))
     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe(gulp.dest('dist/css/'));
 });
@@ -26,7 +29,7 @@ gulp.task('webserver', function() {
       port: 9000,
       livereload: true,
       directoryListing: false,
-      open: false
+      open: 'http://localhost:9000'
     }));
 });
 
