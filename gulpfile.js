@@ -26,10 +26,10 @@ gulp.task('webserver', function() {
   gulp.src('./dist/')
     .pipe(webserver({
       host: '0.0.0.0',
-      port: 9000,
+      port: 8000,
       livereload: true,
       directoryListing: false,
-      open: 'http://localhost:9000'
+      open: 'http://localhost:8000'
     }));
 });
 
