@@ -8,18 +8,18 @@
 
 
 /* text decolation */
-.textNormal { font-weight: normal !important; }
-.textBold { font-weight: bold !important; }
+.textNormal    { font-weight: normal !important; }
+.textBold      { font-weight: bold !important; }
 .textUnderline { text-decoration: underline !important; }
-.textItalic { font-style: italic !important; }
-.textNote { padding-left: 1em; text-indent: -1em; }
+.textItalic    { font-style: italic !important; }
+.textNote      { padding-left: 1em; text-indent: -1em; }
 
 
 /* element position */
-.elementLeft { text-align: left !important; }
+.elementLeft   { text-align: left !important; }
 .elementCenter { text-align: center !important; }
-.elementRight { text-align: right !important; }
-.elementTop { vertical-align: top !important; }
+.elementRight  { text-align: right !important; }
+.elementTop    { vertical-align: top !important; }
 .elementMiddle { vertical-align: middle !important; }
 .elementBottom { vertical-align: bottom !important; }
 

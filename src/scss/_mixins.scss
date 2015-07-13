@@ -2,9 +2,9 @@
 
 
 // mediaquery
-@mixin add-max-query($point) {
+@mixin max-query($point) {
   @media screen and (max-width: $point) { @content; }
 }
-@mixin add-min-query($point) {
+@mixin min-query($point) {
   @media screen and (min-width: $point) { @content; }
 }
