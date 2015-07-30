@@ -1,6 +1,8 @@
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps   = require('gulp-sourcemaps');
+var minifyCss    = require('gulp-minify-css');
 var plumber      = require('gulp-plumber');
 var webserver    = require('gulp-webserver');
 
@@ -12,11 +14,14 @@ var AUTOPREFIXER_BROWSERS = [
 gulp.task('sass', function() {
   return gulp.src('src/scss/**/*.scss')
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass({
       errLogToConsole: true,
-      outputStyle: 'compressed'
+      // outputStyle: 'compressed'
     }))
+    .pipe(minifyCss({advanced: false}))
     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
+    .pipe(sourcemaps.write('maps/'))
     .pipe(gulp.dest('dist/css/'));
 });
 
