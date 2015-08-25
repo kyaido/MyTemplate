@@ -5,6 +5,7 @@ var sourcemaps   = require('gulp-sourcemaps');
 var minifyCss    = require('gulp-minify-css');
 var plumber      = require('gulp-plumber');
 var webserver    = require('gulp-webserver');
+var notify       = require('gulp-notify');
 
 var AUTOPREFIXER_BROWSERS = [
   'last 2 version', 'Explorer >= 8', 'Android >= 2.3'
@@ -13,7 +14,9 @@ var AUTOPREFIXER_BROWSERS = [
 /* sass task */
 gulp.task('sass', function() {
   return gulp.src('src/scss/**/*.scss')
-    .pipe(plumber())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
     .pipe(sourcemaps.init())
     .pipe(sass({
       errLogToConsole: true,
