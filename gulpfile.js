@@ -48,5 +48,9 @@ gulp.task('watch', function() {
 });
 
 
+/* compile task */
+gulp.task('compile', ['sass']);
+
+
 /* default task */
-gulp.task('default', ['webserver', 'watch']);
+gulp.task('default', ['compile', 'webserver', 'watch']);
