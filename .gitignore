@@ -1,4 +1,8 @@
-.sass-cache
 node_modules
+bower_components
 .DS_Store
+.Trashes
+.idea
+*.log
+.sass-cache
 *.css.map
