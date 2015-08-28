@@ -13,7 +13,7 @@ var AUTOPREFIXER_BROWSERS = [
 
 /* sass task */
 gulp.task('sass', function() {
-  return gulp.src('src/scss/**/*.scss')
+  return gulp.src('src/styles/**/*.scss')
     .pipe(plumber({
       errorHandler: notify.onError('Error: <%= error.message %>')
     }))
@@ -25,7 +25,7 @@ gulp.task('sass', function() {
     .pipe(minifyCss({advanced: false}))
     .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe(sourcemaps.write('maps/'))
-    .pipe(gulp.dest('dist/css/'));
+    .pipe(gulp.dest('dist/styles/'));
 });
 
 
@@ -44,7 +44,7 @@ gulp.task('webserver', function() {
 
 /* watch task */
 gulp.task('watch', function() {
-  gulp.watch(['src/scss/**/*.scss'], ['sass']);
+  gulp.watch(['src/styles/**/*.scss'], ['sass']);
 });
 
 
