@@ -8,20 +8,22 @@
 
 
 /* text decolation */
-.textNormal    { font-weight: normal !important; }
-.textBold      { font-weight: bold !important; }
-.textUnderline { text-decoration: underline !important; }
-.textItalic    { font-style: italic !important; }
-.textNote      { padding-left: 1em; text-indent: -1em; }
+.textNormal      { font-weight: normal !important; }
+.textBold        { font-weight: bold !important; }
+.textUnderline   { text-decoration: underline !important; }
+.textNoUnderline { text-decoration: none !important; }
+.textItalic      { font-style: italic !important; }
+.textNowrap      { white-space: nowrap !important; }
+.textNote        { padding-left: 1em; text-indent: -1em; }
 
 
-/* element position */
-.elementLeft   { text-align: left !important; }
-.elementCenter { text-align: center !important; }
-.elementRight  { text-align: right !important; }
-.elementTop    { vertical-align: top !important; }
-.elementMiddle { vertical-align: middle !important; }
-.elementBottom { vertical-align: bottom !important; }
+/* text align */
+.alignLeft   { text-align: left !important; }
+.alignCenter { text-align: center !important; }
+.alignRight  { text-align: right !important; }
+.alignTop    { vertical-align: top !important; }
+.alignMiddle { vertical-align: middle !important; }
+.alignBottom { vertical-align: bottom !important; }
 
 
 /* font-size */
@@ -40,18 +42,6 @@
     }
     @else {
       margin-top: 5px * $i !important;
-    }
-  }
-}
-
-/* margin bottom */
-@for $i from 0 through 10 {
-  .mb#{$i * 5} {
-    @if $i == 0 {
-      margin-bottom: 0 !important;
-    }
-    @else {
-      margin-bottom: 5px * $i !important;
     }
   }
 }

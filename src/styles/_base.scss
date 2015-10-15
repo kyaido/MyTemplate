@@ -13,19 +13,12 @@ body {
   line-height: $base-line-height;
   color: $base-font-color;
 }
-a:link {
+a {
   color: $base-link-color;
   text-decoration: none;
 }
-a:visited {
+a:hover {
   color: $base-link-color;
-  text-decoration: none;
-}
-a:hover,
-a:active,
-a:focus {
-  color: $base-link-color;
-  text-decoration: none;
 }
 
 label {
