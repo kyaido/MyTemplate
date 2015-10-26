@@ -1,15 +1,18 @@
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
+var postcss      = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var csswring     = require('csswring');
 var sourcemaps   = require('gulp-sourcemaps');
-var minifyCss    = require('gulp-minify-css');
 var plumber      = require('gulp-plumber');
 var webserver    = require('gulp-webserver');
 var notify       = require('gulp-notify');
 
+
 var AUTOPREFIXER_BROWSERS = [
   'last 2 version', 'Explorer >= 8', 'Android >= 2.3'
 ];
+
 
 /* sass task */
 gulp.task('sass', function() {
@@ -20,10 +23,11 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(sass({
       errLogToConsole: true,
-      // outputStyle: 'compressed'
     }))
-    .pipe(minifyCss({advanced: false}))
-    .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
+    .pipe(postcss([
+      autoprefixer({browsers: AUTOPREFIXER_BROWSERS}),
+      csswring({preserveHacks: true})
+    ]))
     .pipe(sourcemaps.write('maps/'))
     .pipe(gulp.dest('dist/styles/'));
 });
