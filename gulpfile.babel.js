@@ -1,21 +1,21 @@
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
-var postcss      = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var csswring     = require('csswring');
-var sourcemaps   = require('gulp-sourcemaps');
-var plumber      = require('gulp-plumber');
-var webserver    = require('gulp-webserver');
-var notify       = require('gulp-notify');
+import gulp         from 'gulp';
+import sass         from 'gulp-sass';
+import postcss      from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import csswring     from 'csswring';
+import sourcemaps   from 'gulp-sourcemaps';
+import plumber      from 'gulp-plumber';
+import webserver    from 'gulp-webserver';
+import notify       from 'gulp-notify';
 
 
-var AUTOPREFIXER_BROWSERS = [
-  'last 2 version', 'Explorer >= 8', 'Android >= 2.3'
+const AUTOPREFIXER_BROWSERS = [
+  'last 2 version', 'Explorer >= 10', 'Android >= 4.0'
 ];
 
 
 /* sass task */
-gulp.task('sass', function() {
+gulp.task('sass', () => {
   return gulp.src('src/styles/**/*.scss')
     .pipe(plumber({
       errorHandler: notify.onError('Error: <%= error.message %>')
@@ -34,7 +34,7 @@ gulp.task('sass', function() {
 
 
 /* webserver task */
-gulp.task('webserver', function() {
+gulp.task('webserver', () => {
   gulp.src('./dist/')
     .pipe(webserver({
       host: '0.0.0.0',
@@ -47,7 +47,7 @@ gulp.task('webserver', function() {
 
 
 /* watch task */
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   gulp.watch(['src/styles/**/*.scss'], ['sass']);
 });
 
