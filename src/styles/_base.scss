@@ -14,11 +14,11 @@ body {
   color: $base-font-color;
 }
 a {
-  color: $base-link-color;
+  color: inherit;
   text-decoration: none;
 }
 a:hover {
-  color: $base-link-color;
+  color: inherit;
 }
 
 label {
