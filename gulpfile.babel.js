@@ -40,7 +40,10 @@ gulp.task('webserver', () => {
       host: '0.0.0.0',
       port: 8000,
       livereload: true,
-      directoryListing: false,
+      directoryListing: {
+        enable: true,
+        path: './dist/'
+      },
       open: 'http://localhost:8000'
     }));
 });
